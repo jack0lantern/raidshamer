@@ -4,6 +4,8 @@ import lombok.Getter;
 import net.runelite.api.*;
 import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.VarbitChanged;
+import net.runelite.api.widgets.Widget;
+import net.runelite.api.widgets.WidgetInfo;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -17,17 +19,18 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Consumer;
 
 @PluginDescriptor(
         name = "Raid Shamer",
-        description = "Takes a screenshot of deaths during Theater of Blood. Also supports discord webhook integration.",
-        tags = {"death", "raid", "raids", "shame", "tob", "theater", "discord", "discord", "webhook"},
+        description = "Takes a screenshot of deaths during bosses and raids. Supports discord webhook integration.",
+        tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "discord", "webhook"},
         loadWhenOutdated = true,
         enabledByDefault = false
 )
-public class RaidShamerPlugin extends Plugin{
+public class RaidShamerPlugin extends Plugin {
 
     @Inject
     private Client client;
@@ -60,20 +63,32 @@ public class RaidShamerPlugin extends Plugin{
         if (actor instanceof Player)
         {
             Player player = (Player) actor;
-            if (player != client.getLocalPlayer() && inTob)
+            if (shouldTakeScreenshot(player))
             {
                 takeScreenshot("Death of " + player.getName(), "Wall of Shame");
             }
             else {
-                System.out.println("[DEBUG] Not in tob sorry.");
+                System.out.println("[DEBUG] Not in shameable zone sorry.");
             }
         }
+    }
+
+    private boolean shouldTakeScreenshot(Player player) {
+        boolean isPlayerValidTarget = config.captureOwnDeaths() ||
+            (!config.captureOwnDeaths() && player != client.getLocalPlayer());
+        boolean inRaid = client.getVarbitValue(Varbits.IN_RAID) > 0;
+        Widget toaWidget = client.getWidget(WidgetInfo.TOA_RAID_LAYER);
+        boolean inToa = toaWidget != null;
+
+        boolean isInValidRaid = inTob || (config.activeInCoX() && inRaid) || (config.activeInToA() && inToa);
+
+        return isInValidRaid && isPlayerValidTarget;
     }
 
     @Subscribe
     public void onVarbitChanged(VarbitChanged event)
     {
-        inTob = client.getVar(Varbits.THEATRE_OF_BLOOD) > 1;
+        inTob = client.getVarbitValue(Varbits.THEATRE_OF_BLOOD) > 1;
     }
 
     private void takeScreenshot(String fileName, String subDir)
