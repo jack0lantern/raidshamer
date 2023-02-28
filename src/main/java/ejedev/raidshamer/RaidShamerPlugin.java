@@ -26,7 +26,7 @@ import java.util.function.Consumer;
 @PluginDescriptor(
         name = "Raid Shamer",
         description = "Takes a screenshot of deaths during bosses and raids. Supports discord webhook integration.",
-        tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "discord", "webhook"},
+        tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "toa", "tombs", "discord", "webhook"},
         loadWhenOutdated = true,
         enabledByDefault = false
 )
@@ -74,15 +74,19 @@ public class RaidShamerPlugin extends Plugin {
     }
 
     private boolean shouldTakeScreenshot(Player player) {
-        boolean isPlayerValidTarget = config.captureOwnDeaths() ||
-            (!config.captureOwnDeaths() && player != client.getLocalPlayer());
+        boolean isPlayerValidTarget = (config.captureOwnDeaths() && player == client.getLocalPlayer()) ||
+                (config.captureFriendDeaths() && player.isFriend()) ||
+                (config.captureStrangerDeaths() && player != client.getLocalPlayer() && !player.isFriend());
+
         boolean inRaid = client.getVarbitValue(Varbits.IN_RAID) > 0;
         Widget toaWidget = client.getWidget(WidgetInfo.TOA_RAID_LAYER);
         boolean inToa = toaWidget != null;
 
-        boolean isInValidRaid = inTob || (config.activeInCoX() && inRaid) || (config.activeInToA() && inToa);
+        boolean isInValidRaid = (config.activeInToB() && inTob) || (config.activeInCoX() && inRaid) || (config.activeInToA() && inToa);
 
-        return isInValidRaid && isPlayerValidTarget;
+        boolean isValidLocation = isInValidRaid || config.activeElsewhere();
+
+        return isValidLocation && isPlayerValidTarget;
     }
 
     @Subscribe

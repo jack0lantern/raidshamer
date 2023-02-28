@@ -1,5 +1,8 @@
 # Raid Shamer
-Takes a screenshot of deaths during bosses and raids. Also supports discord webhook integration.
+Takes a screenshot of deaths. Also supports discord webhook integration.
+
+You can toggle whether this shames yourself, friends, and/or anyone else.
+You can toggle whether this shames people on a per-raid basis or outside of raids.
 
 This plugin by default just saves a photo of a death to a folder called "Wall of Shame." I'm assuming if you're reading this, you are looking for discord webhook information.
 
@@ -9,7 +12,7 @@ This plugin by default just saves a photo of a death to a folder called "Wall of
 
 ## How to set up the webhook
 
-First off you will need permissions in a Discord channel, or the ability to make your own. 
+First off you will need permissions in a Discord channel, or the ability to make your own.
 
 Click the settings gear beside a channel, then integrations, and then "View Webhooks." Click on "New Webhook."
 
@@ -17,7 +20,7 @@ Enter in a name, select the channel, then optionally upload a profile photo. Sav
 
 ![Discord webhook setup](https://i.imgur.com/Y5kTDU4.png)
 
-Open up Runelite and go to the settings for Raid Shamer. Click the box to turn on Discord Webhook support and then paste the URL into the text box. 
+Open up Runelite and go to the settings for Raid Shamer. Click the box to turn on Discord Webhook support and then paste the URL into the text box.
 
 ![Runelite webhook settings](https://i.imgur.com/v1XOjiM.png)
 
