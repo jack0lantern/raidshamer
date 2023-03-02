@@ -84,7 +84,7 @@ public class RaidShamerPlugin extends Plugin {
 
         boolean isInValidRaid = (config.activeInToB() && inTob) || (config.activeInCoX() && inRaid) || (config.activeInToA() && inToa);
 
-        boolean isValidLocation = isInValidRaid || config.activeElsewhere();
+        boolean isValidLocation = isInValidRaid || (!isInValidRaid && config.activeElsewhere());
 
         return isValidLocation && isPlayerValidTarget;
     }
