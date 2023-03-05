@@ -82,9 +82,10 @@ public class RaidShamerPlugin extends Plugin {
         Widget toaWidget = client.getWidget(WidgetInfo.TOA_RAID_LAYER);
         boolean inToa = toaWidget != null;
 
-        boolean isInValidRaid = (config.activeInToB() && inTob) || (config.activeInCoX() && inRaid) || (config.activeInToA() && inToa);
-
-        boolean isValidLocation = isInValidRaid || (!isInValidRaid && config.activeElsewhere());
+        boolean isValidLocation = (config.activeInToB() && inTob) ||
+                (config.activeInCoX() && inRaid) ||
+                (config.activeInToA() && inToa) ||
+                (config.activeElsewhere() && !inTob && !inRaid && !inToa);
 
         return isValidLocation && isPlayerValidTarget;
     }
