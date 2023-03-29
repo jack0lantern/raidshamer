@@ -75,8 +75,8 @@ public class RaidShamerPlugin extends Plugin {
 
     private boolean shouldTakeScreenshot(Player player) {
         boolean isPlayerValidTarget = (config.captureOwnDeaths() && player == client.getLocalPlayer()) ||
-                (config.captureFriendDeaths() && player.isFriend()) ||
-                (config.captureStrangerDeaths() && player != client.getLocalPlayer() && !player.isFriend());
+                (player.isFriend()) ||
+                (!config.captureFriendDeathsOnly() && !player.isFriend()) && player != client.getLocalPlayer();
 
         boolean inRaid = client.getVarbitValue(Varbits.IN_RAID) > 0;
         Widget toaWidget = client.getWidget(WidgetInfo.TOA_RAID_LAYER);

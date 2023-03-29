@@ -1,7 +1,8 @@
 # Raid Shamer
 Takes a screenshot of deaths. Also supports discord webhook integration.
 
-You can toggle whether this shames yourself, friends, and/or anyone else.
+You can toggle whether this shames your own deaths.
+You can toggle whether to shame all deaths (default) or only your friends' deaths.
 You can toggle whether this shames people on a per-raid basis or outside of raids.
 
 This plugin by default just saves a photo of a death to a folder called "Wall of Shame." I'm assuming if you're reading this, you are looking for discord webhook information.

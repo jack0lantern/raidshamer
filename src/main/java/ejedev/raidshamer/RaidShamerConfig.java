@@ -21,23 +21,12 @@ public interface RaidShamerConfig extends Config
     }
 
     @ConfigItem(
-        keyName = "captureFriendDeaths",
-        name = "Friend Deaths Captured",
+        keyName = "captureFriendDeathsOnly",
+        name = "Friends' deaths only",
         description = "Allows you to toggle on/off friend death shaming",
         position = 2
     )
-    default boolean captureFriendDeaths()
-    {
-        return true;
-    }
-
-    @ConfigItem(
-        keyName = "captureStrangerDeaths",
-        name = "Stranger Deaths Captured",
-        description = "Allows you to toggle on/off stranger death shaming",
-        position = 3
-    )
-    default boolean captureStrangerDeaths()
+    default boolean captureFriendDeathsOnly()
     {
         return false;
     }
@@ -46,7 +35,7 @@ public interface RaidShamerConfig extends Config
         keyName = "activeInCoX",
         name = "Active in Chambers of Xeric (CoX)",
         description = "Allows for shaming in CoX",
-        position = 4
+        position = 3
     )
     default boolean activeInCoX()
     {
@@ -57,7 +46,7 @@ public interface RaidShamerConfig extends Config
         keyName = "activeInToB",
         name = "Active in Theater of Blood (ToB)",
         description = "Allows for shaming in ToB",
-        position = 5
+        position = 4
     )
     default boolean activeInToB()
     {
@@ -68,7 +57,7 @@ public interface RaidShamerConfig extends Config
         keyName = "activeInToA",
         name = "Active in Tombs of Amascut (ToA)",
         description = "Allows for shaming in ToA",
-        position = 6
+        position = 5
     )
     default boolean activeInToA()
     {
@@ -79,7 +68,7 @@ public interface RaidShamerConfig extends Config
         keyName = "activeOutsideOfRaids",
         name = "Active outside of raids",
         description = "Allows for shaming outside of raids",
-        position = 7
+        position = 6
     )
     default boolean activeOutsideOfRaids()
     {
@@ -90,7 +79,7 @@ public interface RaidShamerConfig extends Config
         keyName = "webhookEnabled",
         name = "Discord Webhook",
         description = "Allows you to send death photos automatically to a discord webhook. Read the github page for info.",
-        position = 8
+        position = 7
     )
     default boolean webhookEnabled()
     {
@@ -101,7 +90,7 @@ public interface RaidShamerConfig extends Config
         keyName = "webhookLink",
         name = "Webhook URL",
         description = "Put your webhook link here, the full thing copied from discord.",
-        position = 9
+        position = 8
     )
     default String webhookLink()
     {
