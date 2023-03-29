@@ -24,7 +24,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.function.Consumer;
 
 @PluginDescriptor(
-        name = "Raid Shamer",
+        name = "Death Shamer",
         description = "Takes a screenshot of deaths during bosses and raids. Supports discord webhook integration.",
         tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "toa", "tombs", "discord", "webhook"},
         loadWhenOutdated = true,

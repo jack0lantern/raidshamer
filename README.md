@@ -1,4 +1,4 @@
-# Raid Shamer
+# Death Shamer
 Takes a screenshot of deaths. Also supports discord webhook integration.
 
 You can toggle whether this shames your own deaths.
@@ -21,7 +21,7 @@ Enter in a name, select the channel, then optionally upload a profile photo. Sav
 
 ![Discord webhook setup](https://i.imgur.com/Y5kTDU4.png)
 
-Open up Runelite and go to the settings for Raid Shamer. Click the box to turn on Discord Webhook support and then paste the URL into the text box.
+Open up Runelite and go to the settings for Death Shamer. Click the box to turn on Discord Webhook support and then paste the URL into the text box.
 
 ![Runelite webhook settings](https://i.imgur.com/v1XOjiM.png)
 
