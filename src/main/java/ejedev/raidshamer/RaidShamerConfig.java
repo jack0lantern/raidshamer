@@ -76,12 +76,12 @@ public interface RaidShamerConfig extends Config
     }
 
     @ConfigItem(
-        keyName = "activeElsewhere",
-        name = "Active in other areas",
+        keyName = "activeOutsideOfRaids",
+        name = "Active outside of raids",
         description = "Allows for shaming outside of raids",
         position = 7
     )
-    default boolean activeElsewhere()
+    default boolean activeOutsideOfRaids()
     {
         return false;
     }
