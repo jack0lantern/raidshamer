@@ -1,12 +1,12 @@
-package ejedev.raidshamer;
+package ejedev.deathshamer;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
 
-@ConfigGroup("raidshamer")
-public interface RaidShamerConfig extends Config
+@ConfigGroup("deathshamer")
+public interface DeathShamerConfig extends Config
 {
 
     @ConfigItem(

@@ -1,4 +1,4 @@
-package ejedev.raidshamer;
+package ejedev.deathshamer;
 import com.google.inject.Provides;
 import lombok.Getter;
 import net.runelite.api.*;
@@ -30,7 +30,7 @@ import java.util.function.Consumer;
         loadWhenOutdated = true,
         enabledByDefault = false
 )
-public class RaidShamerPlugin extends Plugin {
+public class DeathShamerPlugin extends Plugin {
 
     @Inject
     private Client client;
@@ -45,15 +45,15 @@ public class RaidShamerPlugin extends Plugin {
     private ScheduledExecutorService executor;
 
     @Inject
-    private RaidShamerConfig config;
+    private DeathShamerConfig config;
 
     @Getter
     private boolean inTob;
 
     @Provides
-    RaidShamerConfig provideConfig(ConfigManager configManager)
+    DeathShamerConfig provideConfig(ConfigManager configManager)
     {
-        return configManager.getConfig(RaidShamerConfig.class);
+        return configManager.getConfig(DeathShamerConfig.class);
     }
 
     @Subscribe
