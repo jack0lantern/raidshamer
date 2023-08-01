@@ -23,7 +23,7 @@ public interface DeathShamerConfig extends Config
     @ConfigItem(
         keyName = "captureFriendDeathsOnly",
         name = "Friends' deaths only",
-        description = "Allows you to toggle on/off friend death shaming",
+        description = "Allows you to toggle whether death shaming is limited to just your friends list",
         position = 2
     )
     default boolean captureFriendDeathsOnly()
