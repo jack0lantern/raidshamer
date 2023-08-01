@@ -5,7 +5,8 @@ import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
 
-@ConfigGroup("deathshamer")
+//plugin was renamed from raidshamer - keeping legacy config group name to avoid duplicate plugin entries
+@ConfigGroup("raidshamer")
 public interface DeathShamerConfig extends Config
 {
 
