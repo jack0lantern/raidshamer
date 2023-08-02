@@ -1,4 +1,4 @@
-package ejedev.deathshamer;
+package ejedev.raidshamer;
 
 import java.io.*;
 import java.net.HttpURLConnection;

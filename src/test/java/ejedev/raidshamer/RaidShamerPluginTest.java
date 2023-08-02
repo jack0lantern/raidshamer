@@ -1,13 +1,13 @@
-package ejedev.deathshamer;
+package ejedev.raidshamer;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class DeathShamerPluginTest
+public class RaidShamerPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(DeathShamerPlugin.class);
+		ExternalPluginManager.loadBuiltin(RaidShamerPlugin.class);
 		RuneLite.main(args);
 	}
 }
