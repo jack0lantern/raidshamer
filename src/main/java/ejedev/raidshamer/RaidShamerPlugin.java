@@ -5,7 +5,7 @@ import net.runelite.api.*;
 import net.runelite.api.events.ActorDeath;
 import net.runelite.api.events.VarbitChanged;
 import net.runelite.api.widgets.Widget;
-import net.runelite.api.widgets.WidgetInfo;
+import net.runelite.api.widgets.ComponentID;
 import net.runelite.client.config.ConfigManager;
 import net.runelite.client.plugins.Plugin;
 import net.runelite.client.plugins.PluginDescriptor;
@@ -80,7 +80,7 @@ public class RaidShamerPlugin extends Plugin {
                 (!config.captureFriendDeathsOnly() && !player.isFriend()) && player != client.getLocalPlayer();
 
         boolean inRaid = client.getVarbitValue(Varbits.IN_RAID) > 0;
-        Widget toaWidget = client.getWidget(WidgetInfo.TOA_RAID_LAYER);
+        Widget toaWidget = client.getWidget(ComponentID.TOA_RAID_LAYER);
         boolean inToa = toaWidget != null;
 
         boolean isValidLocation = (config.activeInToB() && inTob) ||
