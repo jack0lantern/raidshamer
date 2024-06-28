@@ -119,7 +119,7 @@ public class RaidShamerPlugin extends Plugin {
         int gameOffsetX = 0;
         int gameOffsetY = 0;
         graphics.drawImage(image, gameOffsetX, gameOffsetY, null);
-        imageCapture.takeScreenshot(screenshot, fileName, subDir, false, ImageUploadStyle.NEITHER);
+        imageCapture.saveScreenshot(screenshot, fileName, subDir, false, false);
         ByteArrayOutputStream screenshotOutput = new ByteArrayOutputStream();
         ImageIO.write(screenshot, "png", screenshotOutput);
 
