@@ -1,4 +1,4 @@
-# Raid Shamer
+# Death Shamer
 Takes a screenshot of deaths. Also supports discord webhook integration. Previously named Raid Shamer.
 
 You can toggle whether this shames your own deaths.
