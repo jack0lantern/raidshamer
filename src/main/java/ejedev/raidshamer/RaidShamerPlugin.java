@@ -27,8 +27,7 @@ import java.util.function.Consumer;
         name = "Death Shamer",
         configName = "RaidShamerPlugin", // Plugin was renamed from raidshamer
         description = "Takes a screenshot of deaths during bosses and raids. Supports discord webhook integration.",
-        tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "toa", "tombs", "discord", "webhook"},
-        loadWhenOutdated = true
+        tags = {"death", "raid", "raids", "shame", "tob", "theater", "cox", "chambers", "toa", "tombs", "discord", "webhook"}
 )
 public class RaidShamerPlugin extends Plugin {
 
